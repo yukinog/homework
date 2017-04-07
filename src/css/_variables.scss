@@ -1,0 +1,24 @@
+//-------------------------------------
+// size
+//-------------------------------------
+$max_width: 1200px;
+$x:"screen and (min-width: 576px)";
+$s:"screen and (min-width: 768px)";
+$m:"screen and (min-width: 992px)";
+$l:"screen and (min-width: #{$max_width})";
+
+//-------------------------------------
+// Color
+// http://www.materialui.co/colors
+//-------------------------------------
+$c1: #212121;
+$c2: white;
+$c3: #9E9E9E;
+$c4: #DA4453;
+$c5: #4A89DC;
+$c6: #F6BB42;
+
+//-------------------------------------
+// Fonts
+//-------------------------------------
+$font_family: Verdana, "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;

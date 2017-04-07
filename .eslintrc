@@ -1,0 +1,10 @@
+{
+  "extends": "airbnb",
+  "globals": {
+    "window": true
+  },
+  "rules": {
+    "no-multi-spaces": 0,
+    "import/extensions": 0
+  }
+}
