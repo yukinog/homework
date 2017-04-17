@@ -1,0 +1,24 @@
+/*---------------------------------------/
+ * MODULES
+/---------------------------------------*/
+// calculate size by vieport width
+@function vwcal($num) {
+  $t_bae_size: 750;
+  @return round($num * 1000 / $t_bae_size) / 10 * 1vw;
+};
+
+// create box by aspect retio
+%aspectWrapper {
+  position: relative;
+  width: 100%;
+  iframe {
+    position: absolute;
+    top:0; left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+@mixin aspectWrapper ($width, $height) {
+  padding-bottom: $height * (100 / $width) * 1%;
+  @extend %aspectWrapper;
+}

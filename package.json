@@ -1,22 +1,43 @@
 {
   "name": "frontend-boilerplate",
   "version": "1.0.0",
+  "config": {
+    "styles": {
+      "bin": "./node_modules/.bin/node-sass",
+      "src": "./src/styles/style.scss",
+      "dist": "./public/assets/styles/style.css",
+      "options": "--source-map-embed --output-style compressed"
+    },
+    "templates": {
+      "bin": "./node_modules/.bin/pug",
+      "src": "src/templates",
+      "dist": "--out public/ --pretty"
+    },
+    "browsersync": {
+      "bin": "./node_modules/.bin/browser-sync"
+    },
+    "clean": {
+      "dist": "./public/"
+    },
+    "runall": "./node_modules/.bin/npm-run-all"
+  },
   "scripts": {
+    "build:webpack": "webpack -p",
     "watch:webpack": "webpack --watch",
-    "watch:sass":"./node_modules/.bin/node-sass ./src/styles/all.scss ./public/assets/style.css --source-map-embed --watch",
-    "build:webpack": "webpack",
-    "build:sass": "./node_modules/.bin/node-sass ./src/styles/all.scss ./public/assets/style.css --source-map-embed",
-    "release:webpack": "webpack -p",
-    "release:sass": "./node_modules/.bin/node-sass ./src/styles/all.scss ./public/assets/style.css  --output-style compressed",
-    "browsersync": "./node_modules/.bin/browser-sync start --server 'public' --files 'public/' --port 3000 --browser firefox",
-    "jslint": "./node_modules/.bin/eslint src/js/**/*",
-    "clean": "rimraf ./public/assets/",
-    "watch": "./node_modules/.bin/npm-run-all -p watch:* browsersync",
-    "start": "./node_modules/.bin/npm-run-all -s clean build:sass watch"
+    "build:pug": "$npm_package_config_templates_bin $npm_package_config_templates_src $npm_package_config_templates_dist",
+    "watch:pug": "$npm_package_config_templates_bin $npm_package_config_templates_src $npm_package_config_templates_dist --watch",
+    "build:sass": " $npm_package_config_styles_bin $npm_package_config_styles_src $npm_package_config_styles_dist $npm_package_config_styles_options",
+    "watch:sass": "$npm_package_config_styles_bin $npm_package_config_styles_src $npm_package_config_styles_dist $npm_package_config_styles_options --watch",
+    "browsersync": "$npm_package_config_browsersync_bin  start --server 'public/' --files 'public/' --port 3000",
+    "clean": "rimraf $npm_package_config_clean_dist",
+    "build": "$npm_package_config_runall -s clean build:*",
+    "watch": "$npm_package_config_runall -p watch:* browsersync",
+    "server": "$npm_package_config_runall -s build watch"
   },
   "author": "KATO natsuhiko",
   "license": "MIT",
   "dependencies": {
+    "jquery": "^3.2.1",
     "react": "^15.4.2",
     "react-dom": "^15.4.2"
   },
@@ -33,6 +54,8 @@
     "eslint-plugin-react": "^6.10.3",
     "node-sass": "^4.5.2",
     "npm-run-all": "^4.0.2",
+    "pug": "^2.0.0-beta11",
+    "pug-cli": "^1.0.0-alpha6",
     "rimraf": "^2.6.1",
     "webpack": "^2.3.2"
   }
