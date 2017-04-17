@@ -1,12 +1,17 @@
 {
   "name": "frontend-boilerplate",
-  "version": "1.0.0",
   "config": {
     "styles": {
       "bin": "./node_modules/.bin/node-sass",
       "src": "./src/styles/style.scss",
       "dist": "./public/assets/styles/style.css",
       "options": "--source-map-embed --output-style compressed"
+    },
+    "images": {
+      "minify": "./node_modules/.bin/imagemin",
+      "copy": "./node_modules/.bin/copy",
+      "dist": "public/assets/images/",
+      "src": "src/images/**/*"
     },
     "templates": {
       "bin": "./node_modules/.bin/pug",
@@ -22,6 +27,8 @@
     "runall": "./node_modules/.bin/npm-run-all"
   },
   "scripts": {
+    "minify:images": "$npm_package_config_images_minify $npm_package_config_images_src --out-dir $npm_package_config_images_dist",
+    "copy:images": "$npm_package_config_images_copy $npm_package_config_images_src $npm_package_config_images_dist",
     "build:webpack": "webpack -p",
     "watch:webpack": "webpack --watch",
     "build:pug": "$npm_package_config_templates_bin $npm_package_config_templates_src $npm_package_config_templates_dist",
@@ -30,9 +37,10 @@
     "watch:sass": "$npm_package_config_styles_bin $npm_package_config_styles_src $npm_package_config_styles_dist $npm_package_config_styles_options --watch",
     "browsersync": "$npm_package_config_browsersync_bin  start --server 'public/' --files 'public/' --port 3000",
     "clean": "rimraf $npm_package_config_clean_dist",
-    "build": "$npm_package_config_runall -s clean build:*",
+    "build": "$npm_package_config_runall -s clean minify:images build:*",
+    "devbuild": "$npm_package_config_runall -s clean copy:images build:*",
     "watch": "$npm_package_config_runall -p watch:* browsersync",
-    "server": "$npm_package_config_runall -s build watch"
+    "server": "$npm_package_config_runall -s devbuild watch"
   },
   "author": "KATO natsuhiko",
   "license": "MIT",
@@ -47,6 +55,7 @@
     "babel-preset-es2015": "^6.24.0",
     "babel-preset-react": "^6.23.0",
     "browser-sync": "^2.18.8",
+    "copy": "^0.3.0",
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^14.1.0",
     "eslint-plugin-import": "^2.2.0",
