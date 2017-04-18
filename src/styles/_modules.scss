@@ -1,13 +1,17 @@
 /*---------------------------------------/
  * MODULES
 /---------------------------------------*/
+/////////////////////////////////////////
 // calculate size by vieport width
+/////////////////////////////////////////
 @function vwcal($num) {
   $t_bae_size: 750;
   @return round($num * 1000 / $t_bae_size) / 10 * 1vw;
 };
 
+/////////////////////////////////////////
 // create box by aspect retio
+/////////////////////////////////////////
 %aspectWrapper {
   position: relative;
   width: 100%;

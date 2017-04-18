@@ -1,16 +1,16 @@
 /*-----------------------------------------------/
  THIS IS COMPILED FROM SASS.
- RECOMMENDED NOT TO EDIT CSS FILE DIRECTROY.
+ RECOMMENDED NOT TO EDIT COMPILED CSS FILE
 /-----------------------------------------------*/
 // ファイル構成
+// rest:
+  @import "reset";
 // variables:グルーバルな変数定義
 // * 上書きを防ぐために、このファイル以外で変数を定義する場合は頭に`t-`をつけること。
   @import "variables";
-// rest: variablesで定義したフォントファミリー/色を含む
-  @import "reset";
 // modules:
 // * extends-classとmixin
-// * 直接使わず、commponetsに付ける。
+
   @import "modules";
 // componets:
   @import "components";
