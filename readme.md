@@ -1,4 +1,5 @@
 # Forntend Boilerplate
+Fromtend Boilerplate without gulp.
 
 ## Stack
 * linter: eslint with airbnb javascript style guide
