@@ -15,7 +15,7 @@
     },
     "templates": {
       "bin": "./node_modules/.bin/pug",
-      "src": "src/templates",
+      "src": "src/templates/*.pug",
       "dist": "--out public/ --pretty"
     },
     "browsersync": {
@@ -24,9 +24,21 @@
     "clean": {
       "dist": "./public/"
     },
-    "runall": "./node_modules/.bin/npm-run-all"
+    "runall": "./node_modules/.bin/npm-run-all",
+    "htmlhint": {
+      "bin": "./node_modules/.bin/htmlhint",
+      "src": "./public/*.html"
+    },
+    "eslint": {
+      "bin": "./node_modules/.bin/eslint",
+      "src": "src/scripts/**/* src/scripts/*"
+    }
   },
   "scripts": {
+
+    "lint:html": "$npm_package_config_htmlhint_bin $npm_package_config_htmlhint_src || exit 0",
+    "lint:js": "$npm_package_config_eslint_bin $npm_package_config_eslint_src || exit 0",
+    "lint": "$npm_package_config_runall -s lint:*",
     "minify:images": "$npm_package_config_images_minify $npm_package_config_images_src --out-dir $npm_package_config_images_dist",
     "copy:images": "$npm_package_config_images_copy $npm_package_config_images_src $npm_package_config_images_dist",
     "build:webpack": "webpack -p",
@@ -61,6 +73,7 @@
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^6.10.3",
+    "htmlhint": "^0.9.13",
     "node-sass": "^4.5.2",
     "npm-run-all": "^4.0.2",
     "pug": "^2.0.0-beta11",
