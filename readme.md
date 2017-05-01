@@ -1,5 +1,5 @@
 # Forntend Boilerplate
-Fromtend Boilerplate without gulp.
+Front-end Boilerplate without gulp or grant.
 
 ## setup
 
