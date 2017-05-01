@@ -8,12 +8,19 @@
 // variables:グルーバルな変数定義
 // * 上書きを防ぐために、このファイル以外で変数を定義する場合は頭に`t-`をつけること。
   @import "variables";
-// modules:
-// * extends-classとmixin
 
+// タグに直接当てるスタイルと汎用クラス(最小限に)
+  @import "common";
+
+// modules:
+// * extends-class/ mixin
   @import "modules";
+
 // componets:
-  @import "components";
+  @import "components/button";
+
+// layouts:
+  @import "layouts";
 
 // 各ファイルが長くなる場合は、ディレクトリで適切に分ける。
 // 例: commponets/_index.scss, _lists.scss, _button.scssなど
