@@ -8,7 +8,7 @@ Front-end Boilerplate without gulp or grant.
 $ git clone git@github.com:natsuhikok/frontend-boilerplate.git hogehoge
 
 # change remote
-$ git remote set-url origin git@github.com::yourname/hogehoge.git
+$ git remote set-url origin git@github.com:yourname/hogehoge.git
 
 # add original remote repo as upstrem [optional]
 $ git remote add upstream git@github.com:natsuhikok/frontend-boilerplate.git
