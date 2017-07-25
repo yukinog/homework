@@ -1,57 +1,22 @@
 {
   "name": "frontend-boilerplate",
-  "config": {
-    "styles": {
-      "bin": "./node_modules/.bin/node-sass",
-      "src": "./src/styles/style.scss",
-      "dist": "./public/assets/styles/style.css",
-      "options": "--source-map-embed --output-style compressed"
-    },
-    "images": {
-      "minify": "./node_modules/.bin/imagemin",
-      "copy": "./node_modules/.bin/copy",
-      "dist": "public/assets/images/",
-      "src": "src/images/**/*"
-    },
-    "templates": {
-      "bin": "./node_modules/.bin/pug",
-      "src": "src/templates/*.pug",
-      "dist": "--out public/ --pretty"
-    },
-    "browsersync": {
-      "bin": "./node_modules/.bin/browser-sync"
-    },
-    "clean": {
-      "dist": "./public/"
-    },
-    "runall": "./node_modules/.bin/npm-run-all",
-    "htmlhint": {
-      "bin": "./node_modules/.bin/htmlhint",
-      "src": "./public/*.html"
-    },
-    "eslint": {
-      "bin": "./node_modules/.bin/eslint",
-      "src": "src/scripts/**/* src/scripts/*"
-    }
-  },
   "scripts": {
-    "lint:html": "$npm_package_config_htmlhint_bin $npm_package_config_htmlhint_src || exit 0",
-    "lint:js": "$npm_package_config_eslint_bin $npm_package_config_eslint_src || exit 0",
-    "lint": "$npm_package_config_runall -s lint:*",
-    "minify:images": "$npm_package_config_images_minify $npm_package_config_images_src --out-dir $npm_package_config_images_dist",
-    "copy:images": "$npm_package_config_images_copy $npm_package_config_images_src $npm_package_config_images_dist",
+    "lint:js": "eslint src/scripts/**/* src/scripts/* || exit 0",
+    "lint": "npm-run-all -s lint:*",
+    "minify:images": "imagemin src/images/**/* --out-dir public/assets/images/",
+    "copy:images": "copy src/images/**/* public/assets/images/",
     "build:webpack": "webpack -p",
     "watch:webpack": "webpack --watch",
-    "build:pug": "$npm_package_config_templates_bin $npm_package_config_templates_src $npm_package_config_templates_dist",
-    "watch:pug": "$npm_package_config_templates_bin $npm_package_config_templates_src $npm_package_config_templates_dist --watch",
-    "build:sass": " $npm_package_config_styles_bin $npm_package_config_styles_src $npm_package_config_styles_dist $npm_package_config_styles_options",
-    "watch:sass": "$npm_package_config_styles_bin $npm_package_config_styles_src $npm_package_config_styles_dist $npm_package_config_styles_options --watch",
-    "browsersync": "$npm_package_config_browsersync_bin  start --server 'public/' --files 'public/' --port 3000",
-    "clean": "rimraf $npm_package_config_clean_dist",
-    "build": "$npm_package_config_runall -s clean minify:images build:*",
-    "devbuild": "$npm_package_config_runall -s clean copy:images build:*",
-    "watch": "$npm_package_config_runall -p watch:* browsersync",
-    "server": "$npm_package_config_runall -s devbuild watch"
+    "build:pug": "pug src/templates/*.pug --out public/ --pretty",
+    "watch:pug": "pug src/templates/*.pug --out public/ --pretty --watch",
+    "build:sass": "node-sass ./src/styles/style.scss ./public/assets/styles/style.css --output-style compressed",
+    "watch:sass": "node-sass ./src/styles/style.scss ./public/assets/styles/style.css --source-map-embed --watch",
+    "browsersync": "browser-sync start --server 'public/' --files 'public/' --port 3000",
+    "clean": "rimraf ./public/",
+    "build": "npm-run-all -s clean minify:images build:*",
+    "devbuild": "npm-run-all -s clean copy:images build:*",
+    "watch": "npm-run-all -p watch:* browsersync",
+    "server": "npm-run-all -s devbuild watch"
   },
   "author": "KATO natsuhiko",
   "license": "MIT",
