@@ -16,7 +16,7 @@
     "build": "npm-run-all -s clean minify:images build:*",
     "devbuild": "npm-run-all -s clean copy:images build:*",
     "watch": "npm-run-all -p watch:* browsersync",
-    "server": "npm-run-all -s devbuild watch"
+    "start": "npm-run-all -s devbuild watch"
   },
   "author": "KATO natsuhiko",
   "license": "MIT",

@@ -4,15 +4,26 @@ Front-end Boilerplate without gulp or grant.
 ## setup
 
 ```
+# clone
+$ git clone git@github.com:natsuhikok/frontend-boilerplate.git hogehoge
+
+# change remote
+$ git remote set-url origin git@github.com::yourname/hogehoge.git
+
+# add original remote repo as upstrem [optional]
+$ git remote add upstream git@github.com:natsuhikok/frontend-boilerplate.git
+$ npm install
+
+# install
 $ npm install
 ```
 
 ## Stack
 * js linter: eslint with airbnb javascript style guide
-* html linter: htmlhint
 * dev server: browser-sync
 * javascript: es2015 with webpack
 * css: node-sass with scss style
+* normalize: normalize.css
 * images: imagemin and copy
 * html: pug
 
@@ -21,7 +32,7 @@ All tasks run with npm scripts.
 
 ```bash
 ## run server
-$ npm run server
+$ npm start
 ## build sorce files
 $ npm run build
 ## lint js and html
@@ -33,7 +44,6 @@ See below for other npm scripts.
 ### npm scripts
 |npm run [foo] |description|malti task|
 |-----------|------------|----------------|
-|lint:html|run html linter||
 |lint:js|run js linter||
 |minify:images|minify images||
 |copy:images|copy images||
