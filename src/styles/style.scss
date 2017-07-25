@@ -4,7 +4,7 @@
 /-----------------------------------------------*/
 // ファイル構成
 // rest:
-  @import "reset";
+  @import "./node_modules/normalize.css/normalize";
 // variables:グルーバルな変数定義
 // * 上書きを防ぐために、このファイル以外で変数を定義する場合は頭に`t-`をつけること。
   @import "variables";
