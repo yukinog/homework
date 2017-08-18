@@ -13,3 +13,10 @@ html {
       -ms-box-sizing: border-box;
           box-sizing: border-box;
 }
+
+// for wireframe
+section, header, footer, nav, main {
+  padding: 20px;
+  margin: 20px;
+  border: dotted 2px black;
+}
