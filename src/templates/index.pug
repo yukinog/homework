@@ -6,5 +6,39 @@ block pageInfo
 block content
   include ./_layouts/_header.pug
   main
-    h1 home
+    div#main_visual
+      img(src="./assets/images/main_visual.jpg" alt="カフェ Mr. M COFFEE(ミスターエムコーヒー)店主こだわりの美味しいコーヒー")
+    section#news
+      h2 お知らせ
+      dl
+        dt 2017年⚪️月⚪️日
+        dd ランチクーポン配布中です
+        dt 2017年⚪️月⚪️日
+        dd 季節限定メニューを追加しました
+        dt 2017年⚪️月⚪️日
+        dd 新しい雑貨さん入荷しました
+    section#info
+      h2 MR.M COFFEE 店舗情報
+      dl
+        dt 住所
+        dd
+          | 〒000−0000
+          br
+          | ⚪️⚪️県⚪️⚪️市⚪️⚪️町1-2-3
+        dt TEL
+        dd 000-000-0000
+        dt 営業時間
+        dd 8:00-18:00
+        dt MORNING
+        dd 8:00-11:00
+        dt LUNCHI
+        dd 11:30-14:00
+    aside#banner
+      ul
+        li: a(href="coupon.html")
+          img(src="./assets/images/banner01.jpg" alt="Mr. M COFFEEランチクーポン")
+        li: a(href="")
+          img(src="./assets/images/banner02.jpg" alt="Mr. M COFFEEブログ")
+          
   include ./_layouts/_footer.pug
+    
