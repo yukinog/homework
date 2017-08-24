@@ -14,13 +14,27 @@ html {
           box-sizing: border-box;
 }
 
-// for wireframe
-section, header, footer, nav, main {
-  padding: 20px;
-  margin: 20px;
-  border: dotted 2px black;
+// mcoffee
+header {
+  border-top: 10px solid #511717;
 }
-
-img {
-  max-width: 100%;
+header h1 {
+  margine: 50px 0 30px 0;
+  text-align: center;
+}
+header nav ul {
+  width: 940px;
+  padding-left: 0;
+  margin-left: 0;
+  margin: 0 auto 30px auto;
+  list-style-type: none;
+}
+header nav ul li {
+  width: 155px
+  margin-right: 2px
+  float: left;
+  text-align: center;
+}
+header nav ul child {
+  margin-right: 0;
 }
