@@ -6,5 +6,14 @@ block pageInfo
 block content
   include ./_layouts/_header.pug
   main
-    h1 access
+    section
+      h2 地図
+      iframe(
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1325.9027283640407!2d139.73454173248876!3d35.693649991694905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c5e412329bb%3A0x7db38e6732953dc!2z44CSMTYyLTA4NDYg5p2x5Lqs6YO95paw5a6_5Yy65biC6LC35bem5YaF55S677yS77yR4oiS77yR77yT!5e0!3m2!1sja!2sjp!4v1501280503206"
+        width="940"
+        height="600"
+        frameborder="0"
+        style="border:0"
+      )
+    p.page_top: a(href="#top") ページトップ
   include ./_layouts/_footer.pug
