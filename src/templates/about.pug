@@ -7,5 +7,57 @@ block content
   include ./_layouts/_header.pug
   main
     ol#topic_path
-      li: a(href="") HOME
+      li: a(href="index.html") HOME
+      li ABOUT
+    article
+      h1 カフェ Mr. M COFFEE(ミスターエムコーヒー)について
+      p.lead Mr. M COFFEE(ミスターエムコーヒー)は、店主が焙煎したこだわりのコーヒーを最高の空間とおもてなしで提供する自家焙煎のカフェです。店主が世界中のコーヒー豆を厳選し、コーヒー豆の種類にあわせ、心を込めて焙煎、抽出しております。また、女性に丁度良いボリュームのワンプレートランチ、季節のスィーツなどもご評判いただいております。最高に美味しい一杯のコーヒーを、最高に心地よい空間で。美味しいコーヒーを飲みながら、ゆったりとした素敵な時間を過ごしに、ぜひMr. M COFFEEにお越しください。
+      section#inside
+        h2 店内の様子
+        div.box
+          p.photo
+            img(src="./assets/images/about01.jpg" alt="ミスターエムコーヒーの店内。丁度良い高さのテーブルと座り心地の良いソファ")
+          h3 くつろぎの空間
+          p 店主がこだわった家具たちです。座り心地の良いソファと丁度良い高さのテーブル。くつろぎの空間を満喫してください。
+        div.box
+          p.photo
+            img(src="./assets/images/about02.jpg" alt="ポーチやバッグなどおしゃれでかわいいハンドメイド作品たち")
+          h3 雑貨コーナー
+          p
+            | 店内には作家さんの手作り雑貨を展示、販売しております。委託販売を御希望の作家さんは
+            a(href="contact") お問い合わせフォーム
+            | よりお問い合わせください。
+        div.box
+          p.photo
+            img(src="./assets/images/about03.jpg" alt="キッズドリンクコーナーで自由におかわり")
+          h3 キッズドリンク
+          p オレンジやアップル、好きなジュースを選んで自分でグラスに注ぐ、子供達に大人気のキッズドリンクコーナーです。
+      section#shop_info
+        h2 店舗情報
+        table
+          tr
+            th 店名
+            td MR, M COFFEE
+          tr
+            th 住所
+            td 〒000-0000
+          tr
+            th 電話番号
+            td 000-000-0000
+          tr
+            th 営業時間
+            td 8:00~18:00
+          tr
+            th 定休日
+            td 水曜日、不定休
+          tr
+            th クレジットカード
+            td 利用不可
+          tr
+            th 禁煙席
+            td 喫煙席あり
+          tr
+            th 駐車場
+            td 駐車場あり
+    p.page_top: a(href="#top") ページトップ
   include ./_layouts/_footer.pug
