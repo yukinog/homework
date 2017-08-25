@@ -35,7 +35,7 @@ header nav ul li {
   float: left;
   text-align: center;
 }
-header nav ul child {
+header nav ul li:last-child {
   margin-right: 0;
 }
 .clearfix:after {
@@ -47,7 +47,7 @@ header nav ul li a {
   text-decoration: none;
   background-color: #511717;
   color: #fff;
-  padd: 10px 0;
+  padding: 10px 0;
   display: block;
 }
 header nav ul li a:hover,
