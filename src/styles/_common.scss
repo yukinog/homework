@@ -17,66 +17,73 @@ html {
 // mcoffee
 header {
   border-top: 10px solid #511717;
+  h1 {
+    margin: 50px 0 30px 0;
+    text-align: center;
+  }
+  nav {
+    $acitve_color: #000;
+    ul {
+      width: 940px;
+      padding-left: 0;
+      margin-left: 0;
+      margin: 0 auto 30px auto;
+      list-style-type: none;
+      li {
+        width: 155px;
+        margin-right: 2px;
+        float: left;
+        text-align: center;
+        &:last-child{
+          margin-right: 0;
+        }
+        a {
+          text-decoration: none;
+          background-color: #511717;
+          color: #fff;
+          padding: 10px 0;
+          display: block;
+        }
+      }
+      // active class
+      .current a,
+      a:hover,
+      a:active {
+        background-color: $acitve_color;
+      }
+    }
+  }
 }
-header h1 {
-  margin: 50px 0 30px 0;
-  text-align: center;
-}
-header nav ul {
-  width: 940px;
-  padding-left: 0;
-  margin-left: 0;
-  margin: 0 auto 30px auto;
-  list-style-type: none;
-}
-header nav ul li {
-  width: 155px;
-  margin-right: 2px;
-  float: left;
-  text-align: center;
-}
-header nav ul li:last-child {
-  margin-right: 0;
-}
+
 .clearfix:after {
   content:"";
   display: block;
   clear: both;
 }
-header nav ul li a {
-  text-decoration: none;
-  background-color: #511717;
-  color: #fff;
-  padding: 10px 0;
-  display: block;
-}
-header nav ul li a:hover,
-header nav ul li a:active,
-header nav ul li.current a {
-  background-color: #000;
-}
+
+
 footer {
   background-color: #511717;
   color: #fff;
   padding: 30px 0;
   text-align: center;
-}
-footer ul {
-  padding: 0;
-  margin-bottom: 30px;
-}
-footer ul li {
-  display: inline;
-  margin: 0 10px;
-}
-footer ul li a {
-  color: #fff;
-}
-footer ul li a:link,
-footer ul li a:visited {
-  text-decoration: none;
-}
-footer ul li a:hover,
-footer ul li a:active {
-  text-decoration: underline;
+  ul {
+    padding: 0;
+    margin-bottom: 30px;
+    li {
+      display: inline;
+      margin: 0 10px;
+      a {
+        color: #fff;
+        &:link,
+        &:visited {
+          text-decoration: none;
+        }
+        &:hover,
+        &:active {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
 }
