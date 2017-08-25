@@ -38,3 +38,20 @@ header nav ul li {
 header nav ul child {
   margin-right: 0;
 }
+.clearfix:after {
+  content:"";
+  display: block;
+  clear: both;
+}
+header nav ul li a {
+  text-decoration: none;
+  background-color: #511717;
+  color: #fff;
+  padd: 10px 0;
+  display: block;
+}
+header nav ul li a:hover,
+header nav ul li a:active,
+header nav ul li.current a {
+  background-color: #000;
+}
