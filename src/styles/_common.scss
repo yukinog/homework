@@ -55,3 +55,28 @@ header nav ul li a:active,
 header nav ul li.current a {
   background-color: #000;
 }
+footer {
+  background-color: #511717;
+  color: #fff;
+  padding: 30px 0;
+  text-align: center;
+}
+footer ul {
+  padding: 0;
+  margin-bottom: 30px;
+}
+footer ul li {
+  display: inline;
+  margin: 0 10px;
+}
+footer ul li a {
+  color: #fff;
+}
+footer ul li a:link,
+footer ul li a:visited {
+  text-decoration: none;
+}
+footer ul li a:hover,
+footer ul li a:active {
+  text-decoration: underline;
+}
